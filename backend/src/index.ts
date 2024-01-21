@@ -12,6 +12,7 @@ import { v2 as cloudinary } from "cloudinary";
 import userRoutes from "./routes/users";
 import authRoutes from "./routes/auth";
 import myHotelRoutes from "./routes/my-hotels";
+import hotelRoutes from "./routes/hotels";
 
 
 cloudinary.config({
@@ -42,6 +43,9 @@ app.use("/api/auth",authRoutes);
 
 // hotel routes
 app.use("/api/my-hotels",myHotelRoutes);
+
+// search routes
+app.use("/api/hotels",hotelRoutes);
 
 
 app.get("*",(req:Request,res:Response) => {

@@ -3,7 +3,6 @@ import ManageHotelForm from "../forms/ManageHotelForm/ManageHotelForm";
 import * as apiClient from "../api-client";
 import { useAppContext } from "../contexts/AppContext";
 
-
 const AddHotel = () => {
 
     const {showToast} = useAppContext();
@@ -11,6 +10,7 @@ const AddHotel = () => {
     const {mutate,isLoading} = useMutation(apiClient.addMyHotel,{
         onSuccess : async() => {
             showToast({message:"Hotel Saved Successfully", type : "SUCCESS"});
+            window.scrollTo({ top: 0, behavior: "smooth" });
         },
         onError : () => {
             showToast({message:"Error Saving Hotel", type:"ERROR"});
