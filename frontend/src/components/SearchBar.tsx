@@ -84,6 +84,7 @@ const SearchBar = () => {
           />
         </label>
       </div>
+      
       <div>
         <DatePicker
           selected={checkIn}
