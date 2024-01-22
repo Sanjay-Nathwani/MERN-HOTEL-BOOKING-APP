@@ -8,7 +8,7 @@ type Props = {
 const HotelTypeFilters = ({selectedHotelTypes,onChange} : Props) => {
   return (
     <div className="border-b border-slate-300 pb-5">
-      <h4 className="font-semibold text-md mb-2">Hotel Type</h4>
+      <h4 className="font-semibold text-base mb-2">Hotel Type</h4>
       {hotelTypes.map((type) => (
         <label className="flex items-center space-x-2">
           <input

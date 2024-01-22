@@ -24,7 +24,7 @@ const ImagesSection = () => {
           {existingImageUrls && (
             <div className="grid grid-cols-6 gap-4">
               {existingImageUrls.map((url) => (
-                <div className="relative group hover:scale-105">
+                <div className="relative group hover:scale-105 transform transition duration-[250ms]">
                   <img src={url} className="min-h-full object-cover" />
                   <button
                     onClick={(event) => handleDelete(event, url)}

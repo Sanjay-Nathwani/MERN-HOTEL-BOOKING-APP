@@ -36,7 +36,7 @@ test("should show hotel detail", async ({ page }) => {
 
   await page.getByText("Dublin Getaways").click();
   await expect(page).toHaveURL(/detail/);
-  await expect(page.getByRole("button", { name: "Book now" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Book Now" })).toBeVisible();
 });
 
 test("should book hotel", async ({ page }) => {
@@ -65,7 +65,7 @@ test("should book hotel", async ({ page }) => {
   await stripeFrame.locator('[placeholder="ZIP"]').fill("24225");
 
   await page.getByRole("button", { name: "Confirm Booking" }).click();
-  await expect(page.getByText("Booking Saved!")).toBeVisible();
+  await expect(page.getByText("Booking Saved Successfully")).toBeVisible();
 
   await page.getByRole("link", { name: "My Bookings" }).click();
   await expect(page.getByText("Dublin Getaways")).toBeVisible();

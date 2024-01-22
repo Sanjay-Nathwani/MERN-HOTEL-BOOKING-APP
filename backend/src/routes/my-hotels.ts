@@ -46,6 +46,7 @@ router.post(
       newHotel.imageUrls = imageUrls;
       newHotel.lastUpdated = new Date();
       newHotel.userId = req.userId;
+      
 
       // save the newHotel in database
       const hotel = new Hotel(newHotel);

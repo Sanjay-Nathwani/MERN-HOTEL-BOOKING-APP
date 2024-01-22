@@ -13,7 +13,7 @@ const EditHotel = () => {
         enabled : !!hotelId,
     });
 
-    const {mutate,isLoading} = useMutation(apiClient.updatedMyHotelById,{
+    const {mutate,isLoading} = useMutation(apiClient.updateMyHotelById,{
         onSuccess : () => {
             showToast({message:"Hotel Updated Successfully",type:"SUCCESS"});
         },
