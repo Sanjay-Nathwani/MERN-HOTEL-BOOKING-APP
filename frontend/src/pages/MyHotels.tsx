@@ -29,26 +29,26 @@ const MyHotels = () => {
         </span>
         <div className="grid grid-cols-1 gap-8">
           {hotelData?.map((hotel) => (
-            <div className="flex flex-col justify-between border border-slate-300 rounded-lg p-8 gap-5">
+            <div key={hotel._id} className="flex flex-col justify-between border border-slate-300 rounded-lg p-8 gap-5">
               <h2 className="text-2xl font-bold">{hotel.name}</h2>
               <div className="whitespace-pre-line">{hotel.description}</div>
               <div className="grid grid-cols-5 gap-2">
-                <div className="border border-slate-300 rounded-sm p-3 flex items-center">
+                <div className="border border-slate-300 rounded-sm p-3 flex items-center overflow-auto">
                   <BsMap className="mr-1" />
                   {hotel.city}, {hotel.country}
                 </div>
-                <div className="border border-slate-300 rounded-sm p-3 flex items-center">
+                <div className="border border-slate-300 rounded-sm p-3 flex items-center overflow-auto">
                   <BsBuilding className="mr-1" />
                   {hotel.type}
                 </div>
-                <div className="border border-slate-300 rounded-sm p-3 flex items-center">
+                <div className="border border-slate-300 rounded-sm p-3 flex items-center overflow-auto">
                   <BiMoney className="mr-1" />${hotel.pricePerNight} per night
                 </div>
-                <div className="border border-slate-300 rounded-sm p-3 flex items-center">
+                <div className="border border-slate-300 rounded-sm p-3 flex items-center overflow-auto">
                   <BiHotel className="mr-1" />
                   {hotel.adultCount} adults, {hotel.childCount} children
                 </div>
-                <div className="border border-slate-300 rounded-sm p-3 flex items-center">
+                <div className="border border-slate-300 rounded-sm p-3 flex items-center overflow-auto">
                   <BiStar className="mr-1" />
                   {hotel.starRating} Star Rating
                 </div>

@@ -37,7 +37,7 @@ const Booking = () => {
     }
   );
 
-  const { data: hotel } = useQuery(
+  const { data: hotel} = useQuery(
     "fetchHotelByID",
     () => apiClient.fetchHotelById(hotelId as string),
     {
@@ -50,9 +50,13 @@ const Booking = () => {
     apiClient.fetchCurrentUser
   );
 
+  
+
   if (!hotel) {
     return <></>;
   }
+
+
 
   return (
     <div className="grid md:grid-cols-[1fr_2fr] gap-3">

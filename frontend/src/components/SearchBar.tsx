@@ -37,8 +37,6 @@ const SearchBar = () => {
 
     // Clear search results
     search.clearSearchResults();
-
-    navigate("/search", { replace: true });
   };
 
   const minDate = new Date();
@@ -50,21 +48,21 @@ const SearchBar = () => {
       // onSubmit={handleSubmit}
       className="-mt-8 p-3 bg-orange-400 rounded shadow-md grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 items-center gap-4"
     >
-      <div className="flex flex-row items-center flex-1 bg-white p-2">
+      <div className="flex flex-row items-center flex-1 bg-white p-2 w-45 sm:w-full">
         <MdTravelExplore size={25} className="mr-2" />
         <input
           placeholder="Where are you going?"
-          className="text-base w-full focus:outline-none"
+          className="text-xs sm:text-base w-full focus:outline-none"
           value={destination}
           onChange={(event) => setDestination(event.target.value)}
         />
       </div>
 
-      <div className="flex bg-white px-2 py-1 gap-2">
-        <label className="items-center flex">
-          Adults:
+      <div className="flex items-center bg-white p-2 sm:px-2 sm:py-1 gap-2 w-45 sm:w-full">
+        <label className="flex items-center">
+          <p className="text-sm sm:text-base">Adults:</p>
           <input
-            className="w-full p-1 focus:outline-none font-bold"
+            className="text-xs text-justify sm:text-base w-full p-1 focus:outline-none font-bold"
             type="number"
             min={1}
             max={20}
@@ -73,9 +71,9 @@ const SearchBar = () => {
           />
         </label>
         <label className="items-center flex">
-          Children:
+          <p className="text-sm sm:text-base">Children:</p>
           <input
-            className="w-full p-1 focus:outline-none font-bold"
+            className="text-xs text-justify sm:text-base w-full p-1 focus:outline-none font-bold"
             type="number"
             min={0}
             max={20}
@@ -84,7 +82,7 @@ const SearchBar = () => {
           />
         </label>
       </div>
-      
+
       <div>
         <DatePicker
           selected={checkIn}
@@ -95,7 +93,7 @@ const SearchBar = () => {
           minDate={minDate}
           maxDate={maxDate}
           placeholderText="Check-in Date"
-          className="min-w-full bg-white p-2 focus:outline-none"
+          className="w-full sm:min-w-full bg-white p-2 focus:outline-none"
           wrapperClassName="min-w-full"
         />
       </div>
@@ -109,15 +107,21 @@ const SearchBar = () => {
           minDate={minDate}
           maxDate={maxDate}
           placeholderText="Check-out Date"
-          className="min-w-full bg-white p-2 focus:outline-none"
+          className="w-full sm:min-w-full bg-white p-2 focus:outline-none"
           wrapperClassName="min-w-full"
         />
       </div>
       <div className="flex gap-1">
-        <button onClick={handleSubmit} className="w-2/3 bg-purple-600 text-white h-full p-2 font-bold text-xl hover:bg-purple-500">
+        <button
+          onClick={handleSubmit}
+          className="w-full sm:w-2/3 bg-purple-600 text-white h-full p-2 font-bold text-xl hover:bg-purple-500"
+        >
           Search
         </button>
-        <button onClick={handleClear} className="w-1/3 bg-red-600 text-white h-full p-2 font-bold text-xl hover:bg-red-500">
+        <button
+          onClick={handleClear}
+          className="w-full sm:w-1/3 bg-red-600 text-white h-full p-2 font-bold text-xl hover:bg-red-500"
+        >
           Clear
         </button>
       </div>
